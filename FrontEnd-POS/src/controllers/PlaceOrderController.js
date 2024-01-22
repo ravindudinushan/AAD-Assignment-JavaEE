@@ -3,8 +3,6 @@ loadAllItemCodes();
 setDataToOrderDate();
 getAllCartData();
 
-
-
 function generateNextOrderId() {
 
 }
