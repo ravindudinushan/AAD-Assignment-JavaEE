@@ -3,6 +3,7 @@ package lk.ijse.gdse66.servlet;
 import jakarta.json.*;
 import lk.ijse.gdse66.bo.BOFactory;
 import lk.ijse.gdse66.bo.custom.CustomerBO;
+import lk.ijse.gdse66.bo.custom.QueryBO;
 import lk.ijse.gdse66.dto.CustomerDTO;
 
 import javax.annotation.Resource;
