@@ -5,8 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Item {
     private String code;
     private String name;

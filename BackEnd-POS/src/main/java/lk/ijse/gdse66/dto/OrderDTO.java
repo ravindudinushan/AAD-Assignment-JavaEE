@@ -5,11 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class OrderDTO {
     private String id;
     private String date;
     private String customerId;
-
 }
