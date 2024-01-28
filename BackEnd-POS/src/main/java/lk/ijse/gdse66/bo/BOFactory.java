@@ -1,9 +1,6 @@
 package lk.ijse.gdse66.bo;
 
-import lk.ijse.gdse66.bo.custom.impl.CustomerBOImpl;
-import lk.ijse.gdse66.bo.custom.impl.ItemBOImpl;
-import lk.ijse.gdse66.bo.custom.impl.OrderBOImpl;
-import lk.ijse.gdse66.bo.custom.impl.QueryBOImpl;
+import lk.ijse.gdse66.bo.custom.impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -23,14 +20,16 @@ public class BOFactory {
                 return new QueryBOImpl();
             case ITEM:
                 return new ItemBOImpl();
-            case ORDER:
+            case ORDERS:
                 return new OrderBOImpl();
+            case ORDERDETAILS:
+                return new OrderDetailsBOImpl();
             default:
                 return null;
         }
     }
 
     public enum BOTypes {
-        CUSTOMER, CUSTOM, ITEM, ORDER
+        CUSTOMER, CUSTOM, ITEM, ORDERS, ORDERDETAILS
     }
 }
