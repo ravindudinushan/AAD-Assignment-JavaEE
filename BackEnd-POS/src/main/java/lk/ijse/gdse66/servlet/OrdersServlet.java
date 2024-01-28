@@ -3,6 +3,7 @@ package lk.ijse.gdse66.servlet;
 import jakarta.json.*;
 import lk.ijse.gdse66.bo.BOFactory;
 import lk.ijse.gdse66.bo.custom.OrderBO;
+import lk.ijse.gdse66.bo.custom.OrderDetailsBO;
 import lk.ijse.gdse66.bo.custom.QueryBO;
 import lk.ijse.gdse66.dto.OrderDTO;
 import lk.ijse.gdse66.dto.OrderDetailDTO;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 public class OrdersServlet extends HttpServlet {
     private final QueryBO queryBO = (QueryBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOM);
     private final OrderBO orderBO = (OrderBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ORDERS);
-    //private final OrderDetailsBO orderDetailBO = (OrderDetailsBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ORDERDETAILS);
+    private final OrderDetailsBO orderDetailBO = (OrderDetailsBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ORDERDETAILS);
 
     @Resource(name = "java:comp/env/jdbc/pool")
     DataSource dataSource;
