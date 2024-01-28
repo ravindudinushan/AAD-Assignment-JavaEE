@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public ArrayList<Customer> getAll(Connection connection) throws SQLException, ClassNotFoundException {
-        ResultSet result = CrudUtil.execute(connection, "SELECT * FROM Customer");
+        ResultSet result = CrudUtil.execute(connection, "SELECT * FROM customer");
         ArrayList<Customer> obList = new ArrayList<>();
         while (result.next()) {
             obList.add(new Customer(result.getString(1), result.getString(2), result.getString(3), result.getDouble(4)));
@@ -22,17 +22,17 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean save(Customer dto, Connection connection) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute(connection, "INSERT INTO Customer VALUES (?,?,?,?)", dto.getId(), dto.getName(), dto.getAddress(), dto.getSalary());
+        return CrudUtil.execute(connection, "INSERT INTO customer VALUES (?,?,?,?)", dto.getId(), dto.getName(), dto.getAddress(), dto.getSalary());
     }
 
     @Override
     public boolean update(Customer dto, Connection connection) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute(connection, "UPDATE Customer SET name= ? , address=? , salary=? WHERE id=?", dto.getName(), dto.getAddress(), dto.getSalary(), dto.getId());
+        return CrudUtil.execute(connection, "UPDATE customer SET name= ? , address=? , salary=? WHERE id=?", dto.getName(), dto.getAddress(), dto.getSalary(), dto.getId());
     }
 
     @Override
     public ArrayList<Customer> searchId(String id, Connection connection) throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.execute(connection, "SELECT * FROM Customer WHERE id=?", id);
+        ResultSet rst = CrudUtil.execute(connection, "SELECT * FROM customer WHERE id=?", id);
 
         ArrayList<Customer> allCustomer = new ArrayList<>();
         while (rst.next()) {
@@ -43,12 +43,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean delete(String id, Connection connection) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute(connection, "DELETE FROM Customer WHERE id=?", id);
+        return CrudUtil.execute(connection, "DELETE FROM customer WHERE id=?", id);
     }
 
     @Override
     public String generateNewID(Connection connection) throws SQLException, ClassNotFoundException {
-        ResultSet result = CrudUtil.execute(connection, "SELECT id FROM Customer ORDER BY id DESC LIMIT 1");
+        ResultSet result = CrudUtil.execute(connection, "SELECT id FROM customer ORDER BY id DESC LIMIT 1");
         if (result.next()) {
             return result.getString(1);
         } else {

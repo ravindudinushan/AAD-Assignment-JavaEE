@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class OrderDAOImpl implements OrderDAO {
     @Override
     public ArrayList<Order> getAll(Connection connection) throws SQLException, ClassNotFoundException {
-        ResultSet result = CrudUtil.execute(connection, "SELECT * FROM `Orders`");
+        ResultSet result = CrudUtil.execute(connection, "SELECT * FROM `orders`");
 
         ArrayList<Order> obList = new ArrayList<>();
         while (result.next()) {
@@ -43,7 +43,7 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public String generateNewID(Connection connection) throws SQLException, ClassNotFoundException {
-        ResultSet result = CrudUtil.execute(connection, "SELECT orderId FROM `Orders` ORDER BY orderId DESC LIMIT 1");
+        ResultSet result = CrudUtil.execute(connection, "SELECT orderId FROM `orders` ORDER BY orderId DESC LIMIT 1");
         if (result.next()) {
             return result.getString(1);
         } else {
@@ -53,6 +53,6 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public boolean mangeItems(int qty, String code, Connection connection) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute(connection, "UPDATE Item SET qty=qty-? WHERE code=?", qty, code);
+        return CrudUtil.execute(connection, "UPDATE item SET qty=qty-? WHERE code=?", qty, code);
     }
 }

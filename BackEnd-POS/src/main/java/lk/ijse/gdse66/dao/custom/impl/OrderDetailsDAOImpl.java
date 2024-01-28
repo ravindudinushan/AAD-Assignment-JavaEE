@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class OrderDetailsDAOImpl implements OrderDetailsDAO {
     @Override
     public ArrayList<OrderDetail> getAll(Connection connection) throws SQLException, ClassNotFoundException {
-        ResultSet result = CrudUtil.execute(connection, "SELECT * FROM `OrderDetail`");
+        ResultSet result = CrudUtil.execute(connection, "SELECT * FROM `orderDetail`");
 
         ArrayList<OrderDetail> orderDetailDTO = new ArrayList<>();
         while (result.next()) {
@@ -23,7 +23,7 @@ public class OrderDetailsDAOImpl implements OrderDetailsDAO {
 
     @Override
     public boolean save(OrderDetail orderDetailDTO, Connection connection) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute(connection, "INSERT INTO OrderDetail VALUES(?,?,?,?)", orderDetailDTO.getOrderId(), orderDetailDTO.getItemCode(), orderDetailDTO.getQty(), orderDetailDTO.getTotal());
+        return CrudUtil.execute(connection, "INSERT INTO orderDetail VALUES(?,?,?,?)", orderDetailDTO.getOrderId(), orderDetailDTO.getItemCode(), orderDetailDTO.getQty(), orderDetailDTO.getTotal());
     }
 
     @Override
