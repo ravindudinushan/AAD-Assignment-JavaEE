@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ItemDTO {
-    String code;
-    String name;
-    int qty;
-    double unitPrice;
+    private String code;
+    private String name;
+    private int qty;
+    private double unitPrice;
 }
