@@ -7,13 +7,14 @@ import lk.ijse.gdse66.bo.custom.OrderDetailsBO;
 import lk.ijse.gdse66.bo.custom.QueryBO;
 import lk.ijse.gdse66.dto.OrderDTO;
 import lk.ijse.gdse66.dto.OrderDetailDTO;
+import org.apache.commons.dbcp2.BasicDataSource;
 
-import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -26,8 +27,13 @@ public class OrdersServlet extends HttpServlet {
     private final OrderBO orderBO = (OrderBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ORDERS);
     private final OrderDetailsBO orderDetailBO = (OrderDetailsBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ORDERDETAILS);
 
-    @Resource(name = "java:comp/env/jdbc/pool")
-    DataSource dataSource;
+    BasicDataSource dataSource;
+
+    @Override
+    public void init() throws ServletException {
+        ServletContext sc = getServletContext();
+        dataSource = (BasicDataSource) sc.getAttribute("dbcp");
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {

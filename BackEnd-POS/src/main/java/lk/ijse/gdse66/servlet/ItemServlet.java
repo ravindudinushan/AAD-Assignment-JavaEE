@@ -5,13 +5,14 @@ import lk.ijse.gdse66.bo.BOFactory;
 import lk.ijse.gdse66.bo.custom.ItemBO;
 import lk.ijse.gdse66.bo.custom.QueryBO;
 import lk.ijse.gdse66.dto.ItemDTO;
+import org.apache.commons.dbcp2.BasicDataSource;
 
-import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -24,9 +25,13 @@ public class ItemServlet extends HttpServlet {
     private final QueryBO queryBO = (QueryBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOM);
     private final ItemBO itemBO = (ItemBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ITEM);
 
-    @Resource(name = "java:comp/env/jdbc/pool")
-    DataSource dataSource;
+    BasicDataSource dataSource;
 
+    @Override
+    public void init() throws ServletException {
+        ServletContext sc = getServletContext();
+        dataSource = (BasicDataSource) sc.getAttribute("dbcp");
+    }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
