@@ -77,22 +77,16 @@
                     <section id="left-content" class="col-12 col-sm-8 my-2">
                         <section id="customer-search" class="mb-5">
                             <form class="row gx-3 gy-2 align-items-center">
-                                <div class="col-sm-3">
-                                    <label class="visually-hidden" for="cmbCustomerSearch">Preference</label>
-                                    <select class="form-select" id="cmbCustomerSearch">
-                                        <option value="ID">ID</option>
-                                        <option value="Name">Name</option>
-                                    </select>
-                                </div>
+<!--                                <div class="col-sm-3">-->
+<!--                                    <label class="visually-hidden" for="cmbCustomerSearch">Preference</label>-->
+<!--                                    <select class="form-select" id="cmbCustomerSearch">-->
+<!--                                        <option value="ID">ID</option>-->
+<!--                                        <option value="Name">Name</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
                                 <div class="w-50 col-sm-3">
-                                    <label class="visually-hidden" for="txtCustomerSearch">Name</label>
-                                    <input type="text" class="form-control" id="txtCustomerSearch" placeholder="Search customer">
-                                </div>
-                                <div class="col-auto">
-                                    <button id="btnCustomerSearch" type="button" class="btn btn-outline-primary">Search</button>
-                                </div>
-                                <div class="col-auto">
-                                    <button id="btnCustomerClear" type="button" class="btn btn-outline-warning">Clear</button>
+                                    <label class="visually-hidden" for="SearchCusId">Name</label>
+                                    <input type="text" class="form-control" id="SearchCusId" placeholder="Search customer">
                                 </div>
                             </form>
                         </section>
@@ -114,9 +108,10 @@
                     </section>
                     <section id="right-content" class="d-flex col-8 col-sm-4 col-md-3 justify-content-end rounded-4">
                         <section class="col-8 p-2 bg-light rounded-4 w-100">
+                            <form action="customer" id="customerForm">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="txtCustomerID" placeholder="name@example.com">
-                                <label for="txtCustomerID">Customer ID</label>
+                                <input type="text" class="form-control" id="txtCustomerId" placeholder="name@example.com">
+                                <label for="txtCustomerId">Customer ID</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="txtCustomerName" placeholder="name@example.com">
@@ -130,6 +125,7 @@
                                 <input type="number" class="form-control" id="txtCustomerSalary" placeholder="name@example.com">
                                 <label for="txtCustomerSalary">Salary</label>
                             </div>
+                            </form>
                             <section class="d-flex flex-wrap justify-content-center gap-2">
                                 <button id="btnCustomerSave" type="button" class="btn btn-outline-success">Save</button>
                                 <button id="btnCustomerUpdate" type="button" class="btn btn-outline-primary">update</button>
@@ -350,12 +346,12 @@
     <script src="assets/bootstrap-5.3.2-dist/bootstrap-5.3.2-dist/js/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="controllers/DashboardController.js"></script>
     <script src="controllers/CustomerController.js"></script>
-    <script src="controllers/validations/CustomerValidations.js"></script>
+    <script src="util/validation.js"></script>
+    <script src="util/alert.js"></script>
     <script src="models/Customer.js"></script>
     <script src="controllers/ItemController.js"></script>
-    <script src="controllers/validations/ItemValidations.js"></script>
     <script src="models/Item.js"></script>
-    <script src="controllers/PlaceOrderController.js"></script>
+    <script src="controllers/PurchaseOrderController.js"></script>
     <script src="models/CartTM.js"></script>
 </body>
 </html>
