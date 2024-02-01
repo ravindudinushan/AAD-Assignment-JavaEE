@@ -1,8 +1,5 @@
-let baseUrl = "http://localhost:8080/Pos_JavaEE/";
+let baseUrl = "http://localhost:8080/app/";
 loadAllItems();
-/**
- * Item Save
- * */
 
 $("#btnAddItem").attr('disabled', true);
 $("#btnUpdateItem").attr('disabled', true);
