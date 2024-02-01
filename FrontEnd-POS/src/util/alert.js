@@ -1,8 +1,28 @@
-function saveUpdateAlert(vale, value2) {
+function saveUpdateAlert(vale) {
     Swal.fire({
         position: 'bottom-end',
         icon: 'success',
-        title: vale + ' has been ' + value2,
+        title: vale +' Update Successfully..!',
+        showConfirmButton: false,
+        timer: 2500
+    });
+}
+
+function saveAlert(vale) {
+    Swal.fire({
+        position: 'bottom-end',
+        icon: 'success',
+        title: vale+' Save Successfully..!',
+        showConfirmButton: false,
+        timer: 2500
+    });
+}
+
+function deleteAlert(vale) {
+    Swal.fire({
+        position: 'bottom-end',
+        icon: 'success',
+        title: vale+' Delete Successfully..!',
         showConfirmButton: false,
         timer: 2500
     });
@@ -14,7 +34,7 @@ function unSuccessUpdateAlert(vale,vale2) {
         icon: 'error',
         title: vale + " "+vale2,
         showConfirmButton: false,
-        timer: 1500
+        timer: 2500
     })
 }
 

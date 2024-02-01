@@ -84,9 +84,10 @@
 <!--                                        <option value="Name">Name</option>-->
 <!--                                    </select>-->
 <!--                                </div>-->
-                                <div class="w-50 col-sm-3">
-                                    <label class="visually-hidden" for="SearchCusId">Name</label>
-                                    <input type="text" class="form-control" id="SearchCusId" placeholder="Search customer">
+                                <div class="mb-3 ms-3 me-3 mt-3 ">
+                                    <label class="fw-bold" for="searchCusId">Search Customer :</label>
+                                    <input class="form-control me-2 mt-2" id="searchCusId" placeholder="Input ID"
+                                           type="search">
                                 </div>
                             </form>
                         </section>
@@ -348,10 +349,8 @@
     <script src="controllers/CustomerController.js"></script>
     <script src="util/validation.js"></script>
     <script src="util/alert.js"></script>
-    <script src="models/Customer.js"></script>
     <script src="controllers/ItemController.js"></script>
-    <script src="models/Item.js"></script>
     <script src="controllers/PurchaseOrderController.js"></script>
-    <script src="models/CartTM.js"></script>
+    <script rel="script" src="assets/sweetalert2-11.6.16/sweetalert2.all.js"></script>
 </body>
 </html>

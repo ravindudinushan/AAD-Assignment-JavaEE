@@ -46,7 +46,7 @@ $("#btnCustomerSave").click(function () {
     console.log(formData);
     $.ajax({
         url: baseUrl + "customer", method: "post", data: formData, dataType: "json", success: function (res) {
-            saveUpdateAlert("Customer", res.message);
+            saveAlert("Customer");
             loadAllCustomer();
         }, error: function (error) {
             unSuccessUpdateAlert("Customer", JSON.parse(error.responseText).message);
@@ -115,8 +115,9 @@ function blindClickEvents() {
         $("#txtCustomerName").val(name);
         $("#txtCustomerAddress").val(address);
         $("#txtCustomerSalary").val(salary);
+
+        $("#btnCustomerDelete").attr('disabled', false);
     });
-    $("#btnCustomerSave").attr('disabled', true);
 }
 
 
@@ -125,6 +126,7 @@ function blindClickEvents() {
  * */
 $("#searchCusId").on("keypress", function (event) {
     if (event.which === 13) {
+        event.preventDefault();
         var search = $("#searchCusId").val();
         $("#tbody-customer").empty();
         $.ajax({
@@ -137,6 +139,7 @@ $("#searchCusId").on("keypress", function (event) {
                 let row = "<tr><td>" + res.id + "</td><td>" + res.name + "</td><td>" + res.address + "</td><td>" + res.salary + "</td></tr>";
                 $("#tbody-customer").append(row);
                 blindClickEvents();
+                $("#searchCusId").val("");
             },
             error: function (error) {
                 loadAllCustomer();
@@ -152,9 +155,6 @@ $("#searchCusId").on("keypress", function (event) {
  * Customer Update
  * */
 
-/**
- * Update Action
- * */
 $("#btnCustomerUpdate").click(function () {
 
     let cusId = $("#txtCustomerId").val();
@@ -206,7 +206,7 @@ $("#btnCustomerDelete").click(function () {
         contentType: "application/json",
         data: JSON.stringify(customerOb),
         success: function (res) {
-            saveUpdateAlert("Customer", res.message);
+            deleteAlert("Customer");
             loadAllCustomer();
         },
         error: function (error) {
