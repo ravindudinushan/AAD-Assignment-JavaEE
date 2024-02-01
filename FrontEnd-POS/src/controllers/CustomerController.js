@@ -1,17 +1,10 @@
 let baseUrl = "http://localhost:8080/app/";
 loadAllCustomer();
-/**
- * Customer Save
- * */
 
 $("#btnCustomerSave").attr('disabled', true);
 $("#btnCustomerUpdate").attr('disabled', true);
 $("#btnCustomerDelete").attr('disabled', true);
 
-/**
- * Customer Save
- * Customer ID
- * */
 function generateCustomerID() {
     $("#txtCustomerId").val("C00-001");
     $.ajax({

@@ -4,10 +4,7 @@ loadAllItems();
 $("#btnAddItem").attr('disabled', true);
 $("#btnUpdateItem").attr('disabled', true);
 $("#btnDeleteItem").attr('disabled', true);
-/**
- * Item Save
- * Item ID
- * */
+
 function generateItemID() {
     $("#txtItemID").val("I00-001");
     $.ajax({
@@ -44,7 +41,7 @@ $("#btnAddItem").click(function () {
         data: formData,
         dataType: "json",
         success: function (res) {
-            saveUpdateAlert("item", res.message);
+            saveAlert("item");
             loadAllItems();
         },
         error: function (error) {
@@ -175,7 +172,7 @@ $("#btnUpdateItem").click(function () {
         contentType: "application/json",
         data: JSON.stringify(itemOb),
         success: function (res) {
-            saveUpdateAlert("Item", res.message);
+            saveUpdateAlert("Item");
             loadAllItems();
         },
         error: function (error) {
@@ -212,7 +209,7 @@ $("#btnDeleteItem").click(function () {
         contentType: "application/json",
         data: JSON.stringify(itemOb),
         success: function (res) {
-            saveUpdateAlert("Item", res.message);
+            deleteAlert("Item");
             loadAllItems();
         },
         error: function (error) {
