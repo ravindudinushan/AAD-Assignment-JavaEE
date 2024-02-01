@@ -146,22 +146,11 @@
                     <section id="item-left-content" class="col-12 col-sm-8 my-2">
                         <section id="item-search" class="mb-5">
                             <form class="row gx-3 gy-2 align-items-center">
-                                <div class="col-sm-3">
-                                    <label class="visually-hidden" for="cmbItemSearch">Preference</label>
-                                    <select class="form-select" id="cmbItemSearch">
-                                        <option value="Code">Code</option>
-                                        <option value="Name">Name</option>
-                                    </select>
-                                </div>
-                                <div class="w-50 col-sm-3">
-                                    <label class="visually-hidden" for="txtItemSearch">Item</label>
-                                    <input type="text" class="form-control" id="txtItemSearch" placeholder="Search item">
-                                </div>
-                                <div class="col-auto">
-                                    <button id="btnItemSearch" type="button" class="btn btn-outline-primary">Search</button>
-                                </div>
-                                <div class="col-auto">
-                                    <button id="btnItemClear" type="button" class="btn btn-outline-warning">Clear</button>
+                                <div class="mb-3 ms-3 me-3 mt-3 ">
+                                    <label class="fw-bold" for="ItemIdSearch">Search Item :</label>
+                                    <input class="form-control me-2 mt-2" id="ItemIdSearch"
+                                           placeholder="Input Item Code"
+                                           type="search">
                                 </div>
                             </form>
                         </section>
@@ -184,6 +173,7 @@
                     </section>
                     <section id="item-right-content" class="d-flex col-8 col-sm-4 col-md-3 justify-content-end rounded-4">
                         <section class="col-8 p-2 bg-light rounded-4 w-100">
+                            <form action="item" id="itemForm">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="txtItemID" placeholder="name@example.com">
                                 <label for="txtItemID">Item Code</label>
@@ -200,9 +190,10 @@
                                 <input type="text" class="form-control" id="txtItemPrice" placeholder="name@example.com">
                                 <label for="txtItemPrice">Price</label>
                             </div>
+                            </form>
                             <section class="d-flex flex-wrap justify-content-center gap-2">
                                 <button id="btnAddItem" type="button" class="btn btn-outline-success">Save</button>
-                                <button id="btnUpdateItem" type="button" class="btn btn-outline-primary">update</button>
+                                <button id="btnUpdateItem" type="button" class="btn btn-outline-primary">Update</button>
                                 <button id="btnDeleteItem" type="button" class="btn btn-outline-danger">Delete</button>
                             </section>
                         </section>
