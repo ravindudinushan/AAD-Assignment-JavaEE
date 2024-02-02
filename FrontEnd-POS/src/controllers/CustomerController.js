@@ -35,13 +35,18 @@ function generateCustomerID() {
  * */
 
 $("#btnCustomerSave").click(function () {
+
     let formData = $("#customerForm").serialize();
+    // console.log("aaaaaaaaaaaaaa")
     console.log(formData);
     $.ajax({
-        url: baseUrl + "customer", method: "post", data: formData, dataType: "json", success: function (res) {
+        url: baseUrl + "customer", method: "post",
+        data: formData,
+        success: function (res) {
             saveAlert("Customer");
             loadAllCustomer();
         }, error: function (error) {
+            console.log(error.responseText);
             unSuccessUpdateAlert("Customer", JSON.parse(error.responseText).message);
         }
     });
@@ -169,6 +174,7 @@ $("#btnCustomerUpdate").click(function () {
             loadAllCustomer();
         },
         error: function (error) {
+            console.log(error.responseText);
             let message = JSON.parse(error.responseText).message;
             unSuccessUpdateAlert("Customer", message);
         }

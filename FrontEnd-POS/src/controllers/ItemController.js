@@ -89,7 +89,7 @@ function loadAllItems() {
             blindClickEvents();
             generateItemID();
             setTextFieldValues("", "", "", "");
-            console.log(res.message);
+            console.log("res message: ", res.message);
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;

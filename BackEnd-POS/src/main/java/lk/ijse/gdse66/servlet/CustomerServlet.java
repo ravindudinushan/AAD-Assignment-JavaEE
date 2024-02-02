@@ -148,6 +148,8 @@ public class CustomerServlet extends HttpServlet {
         String id = req.getParameter("id");
         String name = req.getParameter("name");
         String address = req.getParameter("address");
+//        String salary = req.getParameter("salary");
+//        System.out.println(salary);
         double salary = Double.parseDouble(req.getParameter("salary"));
 
         try (Connection connection = dataSource.getConnection()) {
