@@ -19,7 +19,7 @@ public class ItemBOImpl implements ItemBO {
         ArrayList<ItemDTO> allItem = new ArrayList<>();
 
         for (Item item : allI) {
-            allItem.add(new ItemDTO(item.getCode(), item.getName(), item.getQty(), item.getUnitPrice()));
+            allItem.add(new ItemDTO(item.getCode(), item.getDescription(), item.getQty(), item.getUnitPrice()));
         }
         return allItem;
     }
@@ -31,12 +31,12 @@ public class ItemBOImpl implements ItemBO {
 
     @Override
     public boolean saveItem(ItemDTO dto, Connection connection) throws SQLException, ClassNotFoundException {
-        return itemDAO.save(new Item(dto.getCode(), dto.getName(), dto.getQty(), dto.getUnitPrice()), connection);
+        return itemDAO.save(new Item(dto.getCode(), dto.getDescription(), dto.getQty(), dto.getUnitPrice()), connection);
     }
 
     @Override
     public boolean updateItem(ItemDTO dto, Connection connection) throws SQLException, ClassNotFoundException {
-        return itemDAO.update(new Item(dto.getCode(), dto.getName(), dto.getQty(), dto.getUnitPrice()), connection);
+        return itemDAO.update(new Item(dto.getCode(), dto.getDescription(), dto.getQty(), dto.getUnitPrice()), connection);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class ItemBOImpl implements ItemBO {
         ArrayList<Item> all = itemDAO.searchId(id, connection);
         ArrayList<ItemDTO> allItem = new ArrayList<>();
         for (Item item : all) {
-            allItem.add(new ItemDTO(item.getCode(), item.getName(), item.getQty(), item.getUnitPrice()));
+            allItem.add(new ItemDTO(item.getCode(), item.getDescription(), item.getQty(), item.getUnitPrice()));
         }
         return allItem;
     }

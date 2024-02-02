@@ -57,7 +57,7 @@ public class ItemServlet extends HttpServlet {
                         for (ItemDTO itemDTO : arrayList) {
                             JsonObjectBuilder item = Json.createObjectBuilder();
                             item.add("code", itemDTO.getCode());
-                            item.add("name", itemDTO.getName());
+                            item.add("description", itemDTO.getDescription());
                             item.add("qty", itemDTO.getQty());
                             item.add("unitPrice", itemDTO.getUnitPrice());
                             writer.print(item.build());
@@ -82,7 +82,7 @@ public class ItemServlet extends HttpServlet {
                     for (ItemDTO itemDTO : obList) {
                         JsonObjectBuilder item = Json.createObjectBuilder();
                         item.add("code", itemDTO.getCode());
-                        item.add("name", itemDTO.getName());
+                        item.add("description", itemDTO.getDescription());
                         item.add("qty", itemDTO.getQty());
                         item.add("unitPrice", itemDTO.getUnitPrice());
                         allItems.add(item.build());
@@ -147,7 +147,7 @@ public class ItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         String code = req.getParameter("code");
-        String description = req.getParameter("name");
+        String description = req.getParameter("description");
         int qty = Integer.parseInt(req.getParameter("qty"));
         double unitPrice = Double.parseDouble(req.getParameter("unitPrice"));
 
@@ -190,7 +190,7 @@ public class ItemServlet extends HttpServlet {
         JsonObject item = reader.readObject();
 
         String code = item.getString("code");
-        String description = item.getString("name");
+        String description = item.getString("description");
         int qty = Integer.parseInt(item.getString("qty"));
         double unitPrice = Double.parseDouble(item.getString("unitPrice"));
 
@@ -272,4 +272,5 @@ public class ItemServlet extends HttpServlet {
 
         }
     }
+
 }

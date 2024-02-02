@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost:8080/app/";
+// let baseUrl = "http://localhost:8080/app/";
 loadAllItems();
 
 $("#btnAddItem").attr('disabled', true);
@@ -8,7 +8,7 @@ $("#btnDeleteItem").attr('disabled', true);
 function generateItemID() {
     $("#txtItemID").val("I00-001");
     $.ajax({
-        url: baseUrl + "item?option=ItemIdGenerate",
+        url: "http://localhost:8080/app/item?option=ItemIdGenerate",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -36,7 +36,7 @@ function generateItemID() {
 $("#btnAddItem").click(function () {
     let formData = $("#itemForm").serialize();
     $.ajax({
-        url: baseUrl + "item",
+        url: "http://localhost:8080/app/item",
         method: "post",
         data: formData,
         dataType: "json",
@@ -72,7 +72,7 @@ function setTextFieldValues(code, description, qty, price) {
 function loadAllItems() {
     $("#ItemTable").empty();
     $.ajax({
-        url: baseUrl + "item?option=loadAllItem",
+        url: "http://localhost:8080/app/item?option=loadAllItem",
         method: "GET",
         dataType: "json",
         success: function (res) {
@@ -123,10 +123,11 @@ function blindClickEvents() {
  * */
 $("#ItemIdSearch").on("keypress", function (event) {
     if (event.which === 13) {
+        event.preventDefault();
         var search = $("#ItemIdSearch").val();
         $("#ItemTable").empty();
         $.ajax({
-            url: baseUrl + "item?code=" + search + "&option=searchItemCode",
+            url: "http://localhost:8080/app/item?code=" + search + "&option=searchItemCode",
             method: "GET",
             contentType: "application/json",
             dataType: "json",
@@ -167,7 +168,7 @@ $("#btnUpdateItem").click(function () {
     }
 
     $.ajax({
-        url: baseUrl + "item",
+        url: "http://localhost:8080/app/item",
         method: "put",
         contentType: "application/json",
         data: JSON.stringify(itemOb),
@@ -204,7 +205,7 @@ $("#btnDeleteItem").click(function () {
         unitPrice: itUnitPrice
     }
     $.ajax({
-        url: baseUrl + "item",
+        url: "http://localhost:8080/app/item",
         method: "delete",
         contentType: "application/json",
         data: JSON.stringify(itemOb),

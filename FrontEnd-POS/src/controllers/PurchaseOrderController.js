@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost:8080/Pos_JavaEE/";
+// let baseUrl = "http://localhost:8080/Pos_JavaEE/";
 
 $("#btnPurchase").attr('disabled', true);
 $("#btnAddToCart").attr('disabled', true);

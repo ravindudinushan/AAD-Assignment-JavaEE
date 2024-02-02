@@ -22,12 +22,12 @@ public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public boolean save(Item dto, Connection connection) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute(connection, "INSERT INTO item VALUES (?,?,?,?)", dto.getCode(), dto.getName(), dto.getQty(), dto.getUnitPrice());
+        return CrudUtil.execute(connection, "INSERT INTO item VALUES (?,?,?,?)", dto.getCode(), dto.getDescription(), dto.getQty(), dto.getUnitPrice());
     }
 
     @Override
     public boolean update(Item dto, Connection connection) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute(connection, "UPDATE item SET name= ? , qty=? , unitPrice=? WHERE code=?", dto.getName(), dto.getQty(), dto.getUnitPrice(), dto.getCode());
+        return CrudUtil.execute(connection, "UPDATE item SET description= ? , qty=? , unitPrice=? WHERE code=?", dto.getDescription(), dto.getQty(), dto.getUnitPrice(), dto.getCode());
     }
 
     @Override
