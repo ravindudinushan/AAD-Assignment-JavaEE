@@ -86,7 +86,7 @@ function loadAllCustomer() {
                 let row = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + salary + "</td></tr>";
                 $("#tbody-customer").append(row);
             }
-            blindClickEvents();
+            bindClickEvents();
             generateCustomerID();
             setTextFieldValues("", "", "", "");
             console.log(res.message);
@@ -101,7 +101,8 @@ function loadAllCustomer() {
 /**
  * Table Listener Click and Load textFields
  * */
-function blindClickEvents() {
+function bindClickEvents() {
+    console.log("click");
     $("#tbody-customer>tr").on("click", function () {
         let id = $(this).children().eq(0).text();
         let name = $(this).children().eq(1).text();
