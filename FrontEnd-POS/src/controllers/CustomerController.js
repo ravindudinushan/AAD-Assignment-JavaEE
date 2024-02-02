@@ -56,7 +56,7 @@ $("#btnCustomerSave").click(function () {
 /**
  * clear input fields Values Method
  * */
-function setTextFieldValues(id, name, address, salary) {
+function setTextFieldValue(id, name, address, salary) {
     $("#txtCustomerId").val(id);
     $("#txtCustomerName").val(name);
     $("#txtCustomerAddress").val(address);
@@ -88,7 +88,7 @@ function loadAllCustomer() {
             }
             bindClickEvents();
             generateCustomerID();
-            setTextFieldValues("", "", "", "");
+            setTextFieldValue("", "", "", "");
             console.log(res.message);
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
