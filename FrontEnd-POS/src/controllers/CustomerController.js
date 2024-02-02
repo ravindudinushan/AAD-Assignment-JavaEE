@@ -137,7 +137,7 @@ $("#searchCusId").on("keypress", function (event) {
                 console.log(res);
                 let row = "<tr><td>" + res.id + "</td><td>" + res.name + "</td><td>" + res.address + "</td><td>" + res.salary + "</td></tr>";
                 $("#tbody-customer").append(row);
-                blindClickEvents();
+                bindClickEvents();
                 $("#searchCusId").val("");
             },
             error: function (error) {
