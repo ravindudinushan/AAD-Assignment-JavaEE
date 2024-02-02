@@ -85,6 +85,7 @@ function loadAllItems() {
 
                 let row = "<tr><td>" + code + "</td><td>" + description + "</td><td>" + qty + "</td><td>" + unitPrice + "</td></tr>";
                 $("#ItemTable").append(row);
+                console.log(code,description,qty,unitPrice);
             }
             blindClickEvents();
             generateItemID();
