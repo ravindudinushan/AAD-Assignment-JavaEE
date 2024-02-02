@@ -116,7 +116,9 @@ function bindClickEvents() {
         $("#txtCustomerSalary").val(salary);
 
         $("#btnCustomerDelete").attr('disabled', false);
+        $("#btnCustomerUpdate").attr('disabled', false);
     });
+    $("#btnCustomerSave").attr('disabled', true);
 }
 
 
@@ -280,6 +282,7 @@ $("#txtCustomerSalary").on('keydown', function (event) {
             $('#btnCustomerSave').focus();
         }
     }
+    $("#btnCustomerSave").attr('disabled', false);
 });
 
 function setButtonState(value) {
