@@ -114,6 +114,8 @@ function blindClickEvents() {
         $("#txtItemName").val(description);
         $("#txtItemQty").val(qty);
         $("#txtItemPrice").val(unitPrice);
+
+        $("#btnDeleteItem").attr('disabled', false);
     });
     $("#btnAddItem").attr('disabled', true);
 }
