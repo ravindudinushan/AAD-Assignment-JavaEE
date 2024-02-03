@@ -21,6 +21,9 @@ function setTheLastView() {
         case "ORDERS":
             setView($("#order-page"));
             break;
+        case "ORDER-DETAIL":
+            setView($("#orderDetail-page"));
+            break;
         default:
             setView($("#home-page"));
     }
@@ -40,6 +43,9 @@ function saveLastView(clickedID) {
         case "order-page":
             localStorage.setItem("view", "ORDERS");
             break;
+        case "orderDetail-page":
+            localStorage.setItem("view", "ORDER-DETAIL");
+            break;
     }
 }
 
@@ -58,7 +64,7 @@ function setView(viewOb) {
 }
 
 function clearAll() {
-    $("#home-page,#customer-page,#item-page,#order-page").css('display','none');
+    $("#home-page,#customer-page,#item-page,#order-page,#orderDetail-page").css('display','none');
 }
 
 
@@ -76,4 +82,8 @@ $("#item-nav").click(function () {
 
 $("#order-nav").click(function () {
     setView($("#order-page"));
+});
+
+$("#orderDetail-nav").click(function () {
+    setView($("#orderDetail-page"));
 });
