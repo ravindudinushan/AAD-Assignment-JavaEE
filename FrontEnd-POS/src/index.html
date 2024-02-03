@@ -203,134 +203,152 @@
         </section>
 
         <section id="order-page">
-            <section id="title" class=" d-flex mt-5 mb-4 justify-content-center">
-            </section>
-            <section id="content" class="container-fluid py-4 rounded-4">
-                <section class="container-fluid">
-                    <section id="place-order-content" class="row d-flex justify-content-between flex-wrap">
-                        <section id="order-details" class="col-12 col-sm-8">
-                            <section id="invoice-details" class=" col-12 p-2 rounded-4">
-                                <div class="rounded-3 w-100 bg-success">
-                                    <h5 class="fw-normal ps-3 mb-0 py-1 text-white">Invoice Details</h5>
-                                </div>
-                                <div id="customer-detail-cover" class="row">
-                                    <div id="order-id" class="d-flex flex-wrap gap-5">
-                                        <div class="mt-1 col-5 col-md-3">
-                                            <label for="txtOrderId" class="form-label m-0">Order ID :</label>
-                                            <input type="text" class="form-control" id="txtOrderId" placeholder="Ex: OD-0001">
-                                        </div>
-                                        <div class="mt-1 col-5 col-md-3">
-                                            <label for="txtOrderDate" class="form-label m-0">Order Date :</label>
-                                            <input type="text" class="form-control" id="txtOrderDate" disabled="true">
-                                        </div>
-                                    </div>
-                                    <!--order-->
-                                    <div id="customer-id" class="d-flex flex-wrap align-items-center gap-3">
-                                        <div class="mt-1 col-5 col-md-3">
-                                            <label for="cmbCustomerIds" class="form-label m-0">Customer ID :</label>
-                                            <select id="cmbCustomerIds" class="form-select" aria-label="Default select example">
+            <div class="row justify-content-around" style="height: min-content">
 
-                                            </select>
-                                        </div>
-                                        <div class="mt-1 col-5 col-md-4">
-                                            <label for="lblCustomerName" class="form-label m-0">Customer Name :</label>
-                                            <label id="lblCustomerName"class="form-label m-0 fw-semibold"></label>
-                                        </div>
-                                        <div class="mt-1 col-5 col-md-4">
-                                            <label for="lblCustomerAddress" class="form-label m-0">Customer Address :</label>
-                                            <label id="lblCustomerAddress" class="form-label m-0 fw-semibold"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                <!-- Order Invoice Details Section Start -->
+                <div class="col-10 col-md-5 col-lg-4 p-3 mt-3 rounded-3 sectionBorder" style="background-color: white">
+                    <h5 class="text-center p-2 text-light rounded-3" style="background: #16A085">Invoice Details</h5>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="orderId">Order ID :</label>
+                            <input class="form-control border-dark" disabled id="orderId" type="text" value="ODI-001">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="orderDate">Order Date :</label>
+                            <input class="form-control border-dark" id="orderDate" type="date">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="cmbCustomerId">Customer ID :</label>
+                            <select aria-label="Default select example" class="form-select border-dark" id="cmbCustomerId"
+                                    value="Customer ID">
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="customerName">Name :</label>
+                            <input class="form-control border-dark" disabled id="customerName" type="text">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="customerAddress">Address :</label>
+                            <input class="form-control border-dark" disabled id="customerAddress" type="text">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="customerSalary">Salary :</label>
+                            <input class="form-control border-dark" disabled id="customerSalary" type="text">
+                        </div>
+                    </div>
+                </div>
+                <!-- Order Invoice Details Section End -->
 
-                            <!--invoice-details-->
-                            <section id="item-details" class="mt-4 p-2 rounded-4">
-                                <div class="rounded-3 w-100 bg-success">
-                                    <h5 class="fw-normal ps-3 mb-0 py-1 text-white">Item Details</h5>
-                                </div>
-                                <div id="item-details-cover">
-                                    <div id="item-id" class="d-flex flex-wrap gap-5 align-items-center">
-                                        <div class="mt-1 col-4 col-md-3">
-                                            <label for="cmbItemCodes" class="form-label m-0">Item Code :</label>
-                                            <select id="cmbItemCodes" class="form-select" aria-label="Default select example">
+                <!-- Order Item Details Section Start -->
+                <div class="col-10 col-md-5 col-lg-4 p-3 mt-3 rounded-3 sectionBorder" style="background-color: white">
+                    <h5 class="text-center p-2 text-light rounded-3" style="background: #16A085">Item Details</h5>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="cmbItemCode">Item Code :</label>
+                            <select aria-label="Default select example" class="form-select border-dark" id="cmbItemCode"
+                                    value="Item Code">
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="itemName">Item Name :</label>
+                            <input class="form-control border-dark" disabled id="itemName" type="text">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="itemPrice">Unit Price :</label>
+                            <input class="form-control border-dark" disabled id="itemPrice" type="text">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="qtyOnHand">Qty On Hand :</label>
+                            <input class="form-control border-dark" disabled id="qtyOnHand" type="text">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="buyQty">Buy Qty :</label>
+                            <input class="form-control border-dark" id="buyQty" type="text">
+                            <strong class="control-error" id="lblCheckQty"></strong>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 mt-4 ">
+                            <button class="btn btn-primary rounded-2" id="btnAddToCart" type="button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Order Item Details Section End -->
 
-                                            </select>
-                                        </div>
-                                        <div class="mt-1 col-5 col-md-3">
-                                            <label for="txtOrderQty" class="form-label m-0">Order qty :</label>
-                                            <input type="number" class="form-control" id="txtOrderQty" >
-                                        </div>
-                                        <div class="col-auto">
-                                            <button id="btnAddToCart" type="button" class="btn btn-warning">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <!--                item /////////////////-->
-                                    <div id="item-name" class="d-flex flex-wrap align-items-center gap-3">
-                                        <div class="mt-1 col-4 col-md-4">
-                                            <label for="lblItemName" class="form-label m-0">Item Name :</label>
-                                            <label id="lblItemName" class="form-label m-0 fw-semibold"></label>
-                                        </div>
-                                        <div class="mt-1 col-3 col-md-3">
-                                            <label for="lblItemUnitPrice" class="form-label m-0">Unit Price :</label>
-                                            <label id="lblItemUnitPrice" class="form-label m-0 fw-semibold"></label>
-                                        </div>
-                                        <div class="mt-1 col-3 col-md-3">
-                                            <label for="lblQtyOnHand" class="form-label m-0">Qty On Hand :</label>
-                                            <label id="lblQtyOnHand" class="form-label m-0 fw-semibold"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </section>
-                        <!--           order-details ////////////////////////////-->
-                        <section id="amount-details" class="col-4 p-2 rounded-4">
-                            <div id="sub-total" class="d-flex justify-content-center align-items-center gap-2 mb-2 mt-4">
-                                <label for="lblSubTotal" class="form-label m-0 text-danger fs-4 fw-semibold">Sub Total :</label>
-                                <label id="lblSubTotal" class="form-label m-0 fw-semibold text-danger fs-4"></label>
-                            </div>
-                            <div id="total" class="d-flex justify-content-center gap-2">
-                                <label for="lblTotal" class="form-label m-0 fs-5">Total :</label>
-                                <label id="lblTotal" class="form-label m-0 fs-5"></label>
-                            </div>
-                            <div id="enter-total-div" class="row d-flex justify-content-center gap-1 my-2">
-                                <div class="mt-1 col-6 col-md-5">
-                                    <label for="txtCash" class="form-label m-0">Cash :</label>
-                                    <input type="number" class="form-control" id="txtCash" >
-                                </div>
-                                <div class="mt-1 col-6 col-md-6">
-                                    <label for="txtDiscount" class="form-label m-0">Discount :</label>
-                                    <input type="number" class="form-control" id="txtDiscount" >
-                                </div>
-                            </div>
-                            <div id="balance" class="d-flex justify-content-start gap-2 my-3 ms-3">
-                                <label for="lblBalance" class="form-label m-0 fs-6">Balance :</label>
-                                <label id="lblBalance" class="form-label m-0 fs-6"></label>
-                            </div>
-                            <div class="col-auto d-flex justify-content-center mt-5">
-                                <button type="submit" class="btn btn-success">Place Order</button>
-                            </div>
-                        </section>
-                    </section>
-                </section>
-                <!--      table///////////////////////////////////////////////////////////////-->
-                <section id="order-table" class="pt-5 rounded-4 bg-light">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col" class="bg-success text-white">Item Code</th>
-                            <th scope="col" class="bg-success text-white">Item Name</th>
-                            <th scope="col" class="bg-success text-white">Unit Price</th>
-                            <th scope="col" class="bg-success text-white">Quantity</th>
-                            <th scope="col" class="bg-success text-white">Total</th>
-                        </tr>
-                        </thead>
-                        <tbody id="tbody-orderCart" class="table-group-divider">
-                        </tbody>
-                    </table>
-                </section>
+                <!-- Order Details Section Start -->
+                <div class="col-10 col-md-5 col-lg-3 p-3 mt-3 rounded-3 sectionBorder" style="background-color: white">
+                    <h5 class="text-center bg-secondary p-2 text-light rounded-3">Payment Details</h5>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="txtTotal">Total :</label>
+                            <input class="form-control border-dark" disabled id="txtTotal" type="number">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="txtDiscount">Discount :</label>
+                            <input class="form-control border-dark" id="txtDiscount" role="spinbutton" type="number">
+                        </div>
+                    </div>
 
-            </section>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="txtSubTotal">Sub Total :</label>
+                            <input class="form-control border-dark" disabled id="txtSubTotal" type="number">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="txtCash">Cash :</label>
+                            <input class="form-control border-dark" id="txtCash" type="text">
+                            <strong class="control-error" id="lblCheckSubtotal"></strong>
+                        </div>
+                    </div>
+
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label class="fw-bold" for="txtBalance">Balance :</label>
+                            <input class="form-control border-dark" disabled id="txtBalance" type="number">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 mt-4">
+                            <button class="btn btn-success rounded-2" id="btnPurchase" type="submit">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Order Details Section End -->
+
+                <!--clear All Button Section Start-->
+                <div class="d-grid col-12 col-md-2 mt-4">
+                    <button class="btn btn-danger rounded-2 bold sectionBorder" id="btnClearAll" type="button">Clear All
+                    </button>
+                </div>
+                <!--clear All Button Section end-->
+
+                <!-- View Cart Details Table Start -->
+                <div class="row mt-1 mt-md-2 mt-lg-3 justify-content-around" style="height: 315px;">
+                    <div class="col-11 justify-content-around sectionBorder" style="height: 285px; background: white">
+                        <div class="PlaceOrderTableDiv overflow-auto" style="height: 265px;">
+                            <table class="table table-success table-striped table-bordered table-hover">
+                                <thead class="text-light table-dark text-center  table-bordered sticky-top">
+                                <tr>
+                                    <th>Item Code</th>
+                                    <th>Item Name</th>
+                                    <th>Price</th>
+                                    <th>Order Quantity</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblAddToCart"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- View Cart Details Table End -->
+
+            </div>
+
         </section>
     </main>
 
