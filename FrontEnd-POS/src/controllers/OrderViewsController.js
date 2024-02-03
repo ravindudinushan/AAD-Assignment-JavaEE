@@ -1,11 +1,11 @@
-let baseUrl = "http://localhost:8080/Pos_JavaEE/";
+// let baseUrl = "http://localhost:8080/app/";
 loadAllOrders();
 loadAllOrderDetails();
 
 function loadAllOrders() {
     $("#tblOrder").empty();
     $.ajax({
-        url: baseUrl + "orders?option=LoadOrders", method: "GET", dataType: "json", success: function (res) {
+        url: "http://localhost:8080/app/order?option=LoadOrders", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
 
             for (let i of res.data) {
@@ -28,7 +28,7 @@ function loadAllOrders() {
 function loadAllOrderDetails() {
     $("#tblOrderDetails").empty();
     $.ajax({
-        url: baseUrl + "orders?option=LoadOrderDetails", method: "GET", dataType: "json", success: function (res) {
+        url: "http://localhost:8080/app/order?option=LoadOrderDetails", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
 
             for (let i of res.data) {
