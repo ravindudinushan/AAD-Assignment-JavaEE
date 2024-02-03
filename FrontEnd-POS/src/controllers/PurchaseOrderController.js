@@ -1,4 +1,4 @@
-// let baseUrl = "http://localhost:8080/Pos_JavaEE/";
+// let baseUrl = "http://localhost:8080/app/";
 
 $("#btnPurchase").attr('disabled', true);
 $("#btnAddToCart").attr('disabled', true);
@@ -30,7 +30,7 @@ function setDates() {
 function generateOrderID() {
     $("#orderId").val("ODI-001");
     $.ajax({
-        url: baseUrl + "orders?option=OrderIdGenerate",
+        url: baseUrl + "order?option=OrderIdGenerate",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -364,7 +364,7 @@ $("#btnPurchase").click(function () {
     console.log(orderDetails)
 
     $.ajax({
-        url: baseUrl + "orders",
+        url: baseUrl + "order",
         method: "POST",
         contentType: "application/json",
         dataType: "json",
@@ -372,16 +372,17 @@ $("#btnPurchase").click(function () {
         success: function (res) {
             saveUpdateAlert("Order", res.message);
             generateOrderID();
-
+            console.log("check")
         },
         error: function (error) {
+            console.log("error")
             let message = JSON.parse(error.responseText).message;
             unSuccessUpdateAlert("Order", message);
         }
     });
 
     $.ajax({
-        url: baseUrl + "orders",
+        url: baseUrl + "order",
         method: "PUT",
         contentType: "application/json",
         dataType: "json",
