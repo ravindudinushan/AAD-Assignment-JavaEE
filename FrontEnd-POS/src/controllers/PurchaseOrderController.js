@@ -4,11 +4,7 @@ $("#btnPurchase").attr('disabled', true);
 $("#btnAddToCart").attr('disabled', true);
 
 /**
- * Invoice Details
- * */
-
-/**
- * Date Default
+ * Date
  * */
 function setDates() {
 
@@ -24,7 +20,6 @@ function setDates() {
 }
 
 /**
- * Invoice Details
  * Order ID
  * */
 function generateOrderID() {
@@ -55,8 +50,7 @@ function generateOrderID() {
 }
 
 /**
- * Invoice Details
- * Customer Select Combo
+ * Customer Combo
  * */
 $("#cmbCustomerId").empty();
 $.ajax({
@@ -100,7 +94,6 @@ $("#cmbCustomerId").click(function () {
 });
 
 /**
- * Items Details
  * Item Select Combo
  * */
 $("#cmbItemCode").empty();
@@ -157,7 +150,6 @@ let discount = 0;
 let subTotal = 0;
 
 /**
- * Logics
  * Place order
  * */
 let tableRow = [];
@@ -188,9 +180,8 @@ $("#btnAddToCart").on("click", function () {
     }
 
     /**
-     * Logics
      * Place order
-     * Table Add logic
+     * Table
      * */
     $("#tblAddToCart>tr").click('click', function () {
 
@@ -212,8 +203,7 @@ $("#btnAddToCart").on("click", function () {
 
 /**
  * Logics
- * Place order
- * Reduce QtyOnHand
+ * Place order QtyOnHand
  * */
 function reduceQty(orderQty) {
     let minQty = parseInt(orderQty);
@@ -252,7 +242,7 @@ function manageQtyOnHand(preQty, nowQty) {
 /**
  * Logics
  * Place order
- * Manage Total
+ * Total
  * */
 
 function manageTotal(preTotal, nowTotal) {
