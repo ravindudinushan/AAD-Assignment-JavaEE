@@ -94,7 +94,7 @@ $("#cmbCustomerId").click(function () {
 });
 
 /**
- * Item Select Combo
+ Item Select Combo
  * */
 $("#cmbItemCode").empty();
 $.ajax({
@@ -133,7 +133,7 @@ $("#cmbItemCode").click(function () {
 });
 
 /**
- * Items Details
+  Items Details
  * */
 
 let itemCode;
