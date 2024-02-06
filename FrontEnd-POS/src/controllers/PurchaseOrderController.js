@@ -150,7 +150,7 @@ let discount = 0;
 let subTotal = 0;
 
 /**
- * Place order
+ Place order
  * */
 let tableRow = [];
 $("#btnAddToCart").on("click", function () {
@@ -180,8 +180,7 @@ $("#btnAddToCart").on("click", function () {
     }
 
     /**
-     * Place order
-     * Table
+     Place order Table
      * */
     $("#tblAddToCart>tr").click('click', function () {
 
