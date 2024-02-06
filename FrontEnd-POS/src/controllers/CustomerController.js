@@ -37,7 +37,6 @@ function generateCustomerID() {
 $("#btnCustomerSave").click(function () {
 
     let formData = $("#customerForm").serialize();
-    // console.log("aaaaaaaaaaaaaa")
     console.log(formData);
     $.ajax({
         url: baseUrl + "customer", method: "post",
@@ -188,9 +187,6 @@ $("#btnCustomerUpdate").click(function () {
  * Customer Delete
  * */
 
-/**
- * Delete Action
- * */
 $("#btnCustomerDelete").click(function () {
 
     let cusId = $("#txtCustomerId").val();
