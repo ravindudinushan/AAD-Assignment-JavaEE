@@ -31,7 +31,7 @@ function generateItemID() {
 }
 
 /**
- * Button Add New Item
+ * Add New Item
  * */
 $("#btnAddItem").click(function () {
     let formData = $("#itemForm").serialize();
@@ -51,7 +51,7 @@ $("#btnAddItem").click(function () {
 });
 
 /**
- * clear input fields Values Method
+ * clear input fields Values
  * */
 function setTextFieldValues(code, description, qty, price) {
     $("#txtItemID").val(code);
@@ -67,7 +67,7 @@ function setTextFieldValues(code, description, qty, price) {
 }
 
 /**
- * load all Item Method
+ * load all item
  * */
 function loadAllItems() {
     $("#ItemTable").empty();
@@ -100,7 +100,7 @@ function loadAllItems() {
 }
 
 /**
- * Table Listener Click and Load textFields
+ * Table Click and Load textFields
  * */
 function blindClickEvents() {
     $("#ItemTable>tr").on("click", function () {
@@ -122,7 +122,7 @@ function blindClickEvents() {
 
 
 /**
- * Search id and Load Table
+ * Search id
  * */
 $("#ItemIdSearch").on("keypress", function (event) {
     if (event.which === 13) {
@@ -149,13 +149,9 @@ $("#ItemIdSearch").on("keypress", function (event) {
     }
 });
 
-/**
- * Item Update
+/**Item Update
  * */
 
-/**
- * Update Action
- * */
 $("#btnUpdateItem").click(function () {
 
     let code = $("#txtItemID").val();
@@ -186,14 +182,10 @@ $("#btnUpdateItem").click(function () {
     });
 });
 
-
 /**
  * Item Delete
  * */
 
-/**
- * Delete Action
- * */
 $("#btnDeleteItem").click(function () {
 
     let itCode = $("#txtItemID").val();
@@ -223,10 +215,6 @@ $("#btnDeleteItem").click(function () {
     });
 });
 
-
-/**
- * Auto Forces Input Fields Save
- * */
 $("#txtItemID").focus();
 const regExItemCode = /^(I00-)[0-9]{3,4}$/;
 const regExItemName = /^[A-z ]{3,20}$/;
