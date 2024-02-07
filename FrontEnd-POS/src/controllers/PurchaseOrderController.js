@@ -5,7 +5,7 @@ $("#btnAddToCart").attr('disabled', true);
 
 /**
  * Date
- * */
+ **/
 function setDates() {
 
     const date = new Date();
@@ -21,7 +21,7 @@ function setDates() {
 
 /**
  * Order ID
- * */
+ **/
 function generateOrderID() {
     $("#orderId").val("ODI-001");
     $.ajax({
