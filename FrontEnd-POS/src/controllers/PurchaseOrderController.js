@@ -201,7 +201,6 @@ $("#btnAddToCart").on("click", function () {
 });
 
 /**
- * Logics
  * Place order QtyOnHand
  * */
 function reduceQty(orderQty) {
@@ -212,7 +211,6 @@ function reduceQty(orderQty) {
 }
 
 /**
- * Logics
  * Place order
  * Calculate Total
  * */
@@ -223,7 +221,6 @@ function calcTotal(amount) {
 }
 
 /**
- * Logics
  * Place order
  * Manage Available Qty
  * */
@@ -239,7 +236,6 @@ function manageQtyOnHand(preQty, nowQty) {
 }
 
 /**
- * Logics
  * Place order
  * Total
  * */
@@ -252,7 +248,6 @@ function manageTotal(preTotal, nowTotal) {
 }
 
 /**
- * Logics
  * Place order
  * Table Load
  * */
@@ -272,7 +267,6 @@ function loadCartTableDetail() {
 }
 
 /**
- * Logics
  * Place order
  * Enter BuyQty and Check Qty On Hand
  * */
@@ -291,7 +285,6 @@ $(document).on("change keyup blur", "#buyQty", function () {
 });
 
 /**
- * Logics
  * Place order
  * Enter Discount and sub Total display
  * */
@@ -305,7 +298,6 @@ $(document).on("change keyup blur", "#txtDiscount", function () {
 });
 
 /**
- * Logics
  * Place order
  * Enter Cash and Balance display
  * */
@@ -323,9 +315,7 @@ $(document).on("change keyup blur", "#txtCash", function () {
     }
 });
 
-
 /**
- * Logics
  * Place order
  * Purchase Order button
  * */
@@ -386,7 +376,6 @@ $("#btnPurchase").click(function () {
 });
 
 /**
- * Logics
  * Place order
  * Clear Method
  * */
@@ -398,7 +387,6 @@ function clearDetails() {
 }
 
 /**
- * Logics
  * Place order
  * Clear Button
  * */
@@ -407,7 +395,6 @@ $("#btnClearAll").click(function () {
 });
 
 /**
- * Logics
  * Place order
  * Remove Row
  * */
