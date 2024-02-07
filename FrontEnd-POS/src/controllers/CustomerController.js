@@ -53,7 +53,7 @@ $("#btnCustomerSave").click(function () {
 
 
 /**
- * clear input fields Values Method
+ * clear input fields Values
  * */
 function setTextFieldValue(id, name, address, salary) {
     $("#txtCustomerId").val(id);
@@ -68,7 +68,7 @@ function setTextFieldValue(id, name, address, salary) {
 }
 
 /**
- * load all customers Method
+ * load all customers
  * */
 function loadAllCustomer() {
     $("#tbody-customer").empty();
@@ -98,7 +98,7 @@ function loadAllCustomer() {
 }
 
 /**
- * Table Listener Click and Load textFields
+ * Table Click and Load textFields
  * */
 function bindClickEvents() {
     console.log("click");
@@ -122,7 +122,7 @@ function bindClickEvents() {
 
 
 /**
- * Search id and Load Table
+ * Search id
  * */
 $("#searchCusId").on("keypress", function (event) {
     if (event.which === 13) {
