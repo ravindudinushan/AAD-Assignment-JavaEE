@@ -2,7 +2,7 @@ AAD-Assignment-JavaEE
 
 ✅FrontEnd - HTML, CSS, JavaScript, JQuery, Bootstrap
 
-✅BackEnd - Java 8, JavaEE, MySQL
+✅BackEnd - Java 11, JavaEE, MySQL
 
 ✅AJAX, JNDI
 
@@ -13,11 +13,12 @@ AAD-Assignment-JavaEE
 ✅Maven
 
 
+
 Functions :-
 
-✅User can Save, Search, Update, Delete Customer
+✅User can Save, Search, Update, Delete Customers
 
-✅User can Save, Search, Update, Delete Item
+✅User can Save, Search, Update, Delete Items
 
 ✅User can manage Orders
 
