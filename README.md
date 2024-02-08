@@ -22,7 +22,7 @@ Features
 
 Getting Started
 ---------------
-Clone the repository: https://github.com/Piyumikahasini/AAD-Assignment-JavaEE.git
+Clone the repository: https://github.com/ravindudinushan/AAD-Assignment-JavaEE.git
 *   Set up JavaEE development environment and ensure Apache Tomcat is installed.
 *   Build and deploy the application to your Apache Tomcat server.
 * Access the POS system backend at http://localhost:8080/app
